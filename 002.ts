@@ -11,8 +11,10 @@ const generateFibonacciNum = (farr: number[]) => {
 while (fibonacciNums[fibonacciNums.length - 1] < 4000000) {
   generateFibonacciNum(fibonacciNums);
 }
-console.log(fibonacciNums.length)
-console.log(fibonacciNums.reduce((acc:number,val:number) => {
-    if (isEven(val)) acc += val
-    return acc
-}, 0));
+console.log(fibonacciNums.length);
+console.log(
+  fibonacciNums.reduce((acc: number, val: number) => {
+    if (isEven(val)) acc += val;
+    return acc;
+  }, 0)
+);
