@@ -5,14 +5,13 @@ const isPrime = (n: number) => {
   return true;
 };
 
-
-let numPrimes = 0
-let counter = 1
-while (true){
-  counter++
-  if (isPrime(counter)) numPrimes++
-  if(numPrimes == 10001){
-    console.log(counter)
-    break
+let numPrimes = 0;
+let counter = 1;
+while (true) {
+  counter++;
+  if (isPrime(counter)) numPrimes++;
+  if (numPrimes == 10001) {
+    console.log(counter);
+    break;
   }
 }
