@@ -15,3 +15,5 @@ while (true) {
     break;
   }
 }
+
+export{}
