@@ -1,3 +1,4 @@
+// Incomplete
 const grid = [
   [8, 2, 22, 97, 38, 15, 0, 40, 0, 75, 4, 5, 7, 78, 52, 12, 50, 77, 91, 8],
   [
@@ -69,14 +70,14 @@ for (let row = 0; row < grid.length; row++) {
     const up =
       Number(
         grid[row][col] *
-          grid[row - 1][col] *
-          grid[row - 2][col] *
-          grid[row - 3][col]
+          grid[Number(row - 1)][col] *
+          grid[Number(row - 2)][col] *
+          grid[Number(row - 3)][col]
       ) || 1;
     const down =
       Number(
         grid[row][col] *
-          grid[row + 1][col] *
+          grid[Numberrow + 1][col] *
           grid[row + 2][col] *
           grid[row + 3][col]
       ) || 1;
