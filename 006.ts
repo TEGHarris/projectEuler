@@ -13,3 +13,4 @@ const squareSum = (n: number) => {
 };
 
 console.log(Math.abs(sumSquares(n) - squareSum(n)));
+export{}
