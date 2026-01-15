@@ -68,62 +68,38 @@ let maximum = 0;
 for (let row = 0; row < grid.length; row++) {
   for (let col = 0; col < grid[0].length; col++) {
     const up =
-      Number(
-        grid[row][col] *
-          grid[Number(row - 1)][col] *
-          grid[Number(row - 2)][col] *
-          grid[Number(row - 3)][col]
-      ) || 1;
+      row >= 3
+        ? grid[row][col] * grid[row - 1][col] * grid[row - 2][col] * grid[row - 3][col]
+        : 0;
     const down =
-      Number(
-        grid[row][col] *
-          grid[Numberrow + 1][col] *
-          grid[row + 2][col] *
-          grid[row + 3][col]
-      ) || 1;
+      row <= grid.length - 4
+        ? grid[row][col] * grid[row + 1][col] * grid[row + 2][col] * grid[row + 3][col]
+        : 0;
     const left =
-      Number(
-        grid[row][col] *
-          grid[row][col - 1] *
-          grid[row][col - 2] *
-          grid[row][col - 3]
-      ) || 1;
+      col >= 3
+        ? grid[row][col] * grid[row][col - 1] * grid[row][col - 2] * grid[row][col - 3]
+        : 0;
     const right =
-      Number(
-        grid[row][col] *
-          grid[row][col + 1] *
-          grid[row][col + 2] *
-          grid[row][col + 3]
-      ) || 1;
+      col <= grid[0].length - 4
+        ? grid[row][col] * grid[row][col + 1] * grid[row][col + 2] * grid[row][col + 3]
+        : 0;
 
     const upLeft =
-      Number(
-        grid[row][col] *
-          grid[row - 1][col - 1] *
-          grid[row - 2][col - 2] *
-          grid[row - 3][col - 3]
-      ) || 1;
+      row >= 3 && col >= 3
+        ? grid[row][col] * grid[row - 1][col - 1] * grid[row - 2][col - 2] * grid[row - 3][col - 3]
+        : 0;
     const upRight =
-      Number(
-        grid[row][col] *
-          grid[row - 1][col + 1] *
-          grid[row - 2][col + 2] *
-          grid[row - 3][col + 3]
-      ) || 1;
+      row >= 3 && col <= grid[0].length - 4
+        ? grid[row][col] * grid[row - 1][col + 1] * grid[row - 2][col + 2] * grid[row - 3][col + 3]
+        : 0;
     const downLeft =
-      Number(
-        grid[row][col] *
-          grid[row + 1][col - 1] *
-          grid[row + 2][col - 2] *
-          grid[row + 3][col - 3]
-      ) || 1;
+      row <= grid.length - 4 && col >= 3
+        ? grid[row][col] * grid[row + 1][col - 1] * grid[row + 2][col - 2] * grid[row + 3][col - 3]
+        : 0;
     const downRight =
-      Number(
-        grid[row][col] *
-          grid[row + 1][col + 1] *
-          grid[row + 2][col + 2] *
-          grid[row + 3][col + 3]
-      ) || 1;
+      row <= grid.length - 4 && col <= grid[0].length - 4
+        ? grid[row][col] * grid[row + 1][col + 1] * grid[row + 2][col + 2] * grid[row + 3][col + 3]
+        : 0;
     maximum = Math.max(
       up,
       down,
