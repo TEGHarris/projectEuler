@@ -16,3 +16,4 @@ while(!enoughFactors(nthTriangleNum(n))){
     if(n % 1000 == 0 ) console.log(n)
 }
 console.log(nthTriangleNum(n))
+export{}
